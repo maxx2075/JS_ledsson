@@ -36,3 +36,10 @@ console.log("**** Задание 3 ****");
 for (i = 0; i <= 9; console.log(i++)) {
     
 }
+    // **** Задание 4 ****
+console.log("**** Задание 4 ****");
+let pict = "x";
+for (i = 1; i <= 20; i++) {
+    console.log(pict);
+    pict = pict + "x";
+}
