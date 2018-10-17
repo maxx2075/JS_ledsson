@@ -54,5 +54,6 @@ function countBasketPrice(basketfun) {
     return summa;
 }
 let basket = [23,34,56,364,754,345,745,75];
+console.log("Корзина " + basket);
 console.log("Стоимость корзины " + countBasketPrice(basket));
 
