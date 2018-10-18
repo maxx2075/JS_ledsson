@@ -19,11 +19,10 @@ while (i <= 100) {
 
 // **** Задание 2 ****
 console.log("**** Задание 2 ****");
-i = 0;
+i = 1;
+console.log("0 - это ноль");
 do {
-    if (i == 0) {
-        console.log("0 - это ноль");
-    } else if (i % 2 == 0) {
+    if (i % 2 == 0) {
         console.log(i + " - четное число");       
     } else {
         console.log(i + " - нечетное число");       
