@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,700');
+@font-face {
+    font-family: Gotham;
+    src: url("fonts/GothaProLig.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.conteiner {
+    width: 1366px;
+    margin: 0 auto;
+/*  background-color: #f4f4f4;*/
+}
+
+.header{
+    width: 1000px;
+    margin: 0 auto;    
+}
+.header a{
+    height: 50px;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 18px;
+    color: #00B5DF;
+    
+}
+.header img{
+    height: 30px;
+}
+.logo{
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+   height: 100px;
+    background-color: #f4f4f4;;
+}
+.logo img{
+    height: 50px;
+}
+.logo h3{
+    font-size: 38px;
+     font-weight: 500;
+    margin-left: 20px;
+}
+.block-trending{
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+/*    background-color: white;*/
+}
+.product-trend{
+    width: 300px;
+
+}
+.product-trend img{
+    display: block;
+    width: 200px;
+    height: auto;
+/*    margin: 0 auto;*/
+}
+.product-trend h2{
+    color: #212121;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 48px;
+/*    text-align: center;*/
+}
+.product-trend p{
+     color: #6c6c6c;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+}
+.product-trend a{
+    display: inline-block;
+    background-color: black;
+    box-shadow: 0px 2px 4.85px 0.15px rgba(33, 33, 33, 0.35);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    width: 130px;
+    height: 35px;
+    border-radius: 24px;
+    margin: 20px 5px 30px;
+}
+.product-trend a:hover{
+    background-color:dimgrey;
+}
+.product-trend span{
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 50px; 
+    
+}
+
+.tab-control {
+    display: flex;
+    width: 1000px;
+    margin: 50px auto;
+        
+}
+
+.tab-control li {
+    
+    padding: 0 10px;
+/*    float: left;*/
+    height: 30px;
+    border-bottom: 1px solid #6c6c6c;
+     list-style-type:none;
+}
+
+.tab-control li a {
+    text-decoration: none;
+    color: #6c6c6c;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+   
+}
+
+.tab-control li a:hover {
+    color: #212121;
+}
+
+.tab-control li:hover {
+    border-bottom: 1px solid black;
+}
+
+.tab-control li a:active {
+    background-color: #ACD1DA;
