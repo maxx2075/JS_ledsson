@@ -39,7 +39,7 @@ for (i = 1; i <= 20; i++) {
     console.log(pict);    
 }
 
-    // **** Задание 5 ****
+// **** Задание 5 ****
 console.log("**** Задание 5 ****");
 function countBasketPrice(basketfun) {
     let summa = 0;    
