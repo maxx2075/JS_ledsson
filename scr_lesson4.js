@@ -46,20 +46,11 @@ let basket = [
                 manufacturer: "Russia"                        
                 }              
              ]
-    //[23,34,56,364,754,345,745,75];
-let basketname,summa = 0
+let summa = 0
 console.log("Корзина: ");
 for (let i=0; i < basket.length; i++) {
-    basketname = ""; 
     summa += basket[i].price;
-    for (prop in basket[i]) {
-        basketname += prop + ":" + basket[i][prop] + " ";        
-    }
-console.log(basketname);    
+    console.log(basket[i]);   
 } 
 console.log("Стоимость корзины: " + summa);
 
-//console.log("Стоимость корзины " + countBasketPrice(basket));
-
-console.log("********************** Задание 3 **********************");
-console.log("********************** Задание 4 **********************");
