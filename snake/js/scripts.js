@@ -13,8 +13,8 @@ let foodCreationSpeed = 1000;   //Скорость появления еды
 let numberOfFood = [3, 0];  //Количество еды. 0 элемент-макс количество, 1 элемент - количество на поле
 
 let obstaclesTimer; // таймер препятствий
-let obstaclesspeed = 5000; // скорость появления препятствий
-let numberOfObstacles = [4, 0];// количество препятсвий. 0 элемент-макс количество, 1 элемент - количество на поле
+let obstaclesspeed = 2000; // скорость появления препятствий
+let numberOfObstacles = [10, 0];// количество препятсвий. 0 элемент-макс количество, 1 элемент - количество на поле
 let obstacles = []; // сами препятствия
 
 let score = 0;  //Очки
@@ -39,6 +39,8 @@ function init() {
 function prepareGameField() {
     let gameTable = document.createElement("table");
     gameTable.setAttribute("class", "game-table");
+    let divtablo = document.createElement("div");
+    divtablo.setAttribute("id", "divtablo");
     let tablo = document.createElement("span");
     tablo.style.color = "white";
     tablo.style.marginLeft = "20px";
@@ -59,7 +61,9 @@ function prepareGameField() {
     }
 
     document.getElementById("snake_field").appendChild(gameTable);
-    document.getElementById("snake_field").appendChild(tablo);
+    document.getElementById("snake_field").appendChild(divtablo);
+    document.getElementById("divtablo").appendChild(tablo);
+    
 }
 
 /**
@@ -106,11 +110,10 @@ function moveSnake() {
         } else if (snakeDirection == "x+") {
             newUnit = document.getElementsByClassName("cell-" + (coordX + 1) + "-" + coordY)[0];
         }
-        console.log(newUnit);
-        let newUnitClasses = newUnit.getAttribute("class").split(" ");
         //проверяем, что newUnit - это не часть змейки
 	    //также проверяем, что змейка не дошла до границы и 
         if (!isSnakeUnit(newUnit) && newUnit != undefined) {
+            let newUnitClasses = newUnit.getAttribute("class").split(" ");
             if (!newUnitClasses.includes("obstacles-unit")) {
             //Добавляем новую часть змейки
             newUnit.setAttribute("class", newUnit.getAttribute("class") + " snake-unit");
