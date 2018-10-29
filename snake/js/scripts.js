@@ -102,13 +102,29 @@ function moveSnake() {
         let coordY = parseInt(snakeCoords[2]);
 
         if (snakeDirection == "y+") {
+            if (coordY == FIELD_SIZE_Y-1) {
+            newUnit = document.getElementsByClassName("cell-" + coordX + "-0")[0];    
+            } else {
             newUnit = document.getElementsByClassName("cell-" + coordX + "-" + (coordY + 1))[0];
+            }
         } else if (snakeDirection == "y-") {
+            if (coordY == 0) {
+            newUnit = document.getElementsByClassName("cell-" + coordX + "-" + (FIELD_SIZE_Y - 1))[0];    
+            } else {
             newUnit = document.getElementsByClassName("cell-" + coordX + "-" + (coordY - 1))[0];
+            }
         } else if (snakeDirection == "x-") {
+            if (coordX == 0) {
+            newUnit = document.getElementsByClassName("cell-" + (FIELD_SIZE_X - 1) + "-" + coordY)[0];    
+            } else {
             newUnit = document.getElementsByClassName("cell-" + (coordX - 1) + "-" + coordY)[0];
+            }
         } else if (snakeDirection == "x+") {
+            if (coordX == FIELD_SIZE_X-1) {
+            newUnit = document.getElementsByClassName("cell-0" + "-" + coordY)[0];    
+            } else {
             newUnit = document.getElementsByClassName("cell-" + (coordX + 1) + "-" + coordY)[0];
+            }
         }
         //проверяем, что newUnit - это не часть змейки
 	    //также проверяем, что змейка не дошла до границы и 
