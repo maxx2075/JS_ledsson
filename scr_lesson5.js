@@ -1,10 +1,15 @@
 figurewhite = ["Л(б)","К(б)","С(б)","Фз(б)","Кл(б)","С(б)","К(б)","Л(б)"];
 figureblack = ["Л(ч)","К(ч)","С(ч)","Фз(ч)","Кл(ч)","С(ч)","К(ч)","Л(ч)"];
-
+letters = ["A","B","C","D","E","F","G","H"];
 let inscriptions = document.getElementsByClassName("inscriptions")[0];
 inscriptions.style.width = '640px';
 inscriptions.style.margin = '0 auto';
 inscriptions.style.height = '80px';
+let letter = document.getElementsByClassName("letter")[0];
+letter.style.width = '80px';
+letter.style.height = '640px';
+letter.style.margin = '0 auto';
+letter.style.float = 'left';
 let divGlav = document.getElementsByClassName("Glav")[0];
 divGlav.style.width = '640px';
 divGlav.style.height = '640px';
