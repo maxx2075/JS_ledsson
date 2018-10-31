@@ -13,7 +13,7 @@ let foodCreationSpeed = 1000;   //Скорость появления еды
 let numberOfFood = [3, 0];  //Количество еды. 0 элемент-макс количество, 1 элемент - количество на поле
 
 let obstaclesTimer; // таймер препятствий
-let obstaclesspeed = 2000; // скорость появления препятствий
+let obstaclesspeed = 5000; // скорость появления препятствий
 let numberOfObstacles = [4, 0];// количество препятсвий. 0 элемент-макс количество, 1 элемент - количество на поле
 let obstacles = []; // сами препятствия
 
@@ -106,10 +106,12 @@ function moveSnake() {
         } else if (snakeDirection == "x+") {
             newUnit = document.getElementsByClassName("cell-" + (coordX + 1) + "-" + coordY)[0];
         }
-
+        console.log(newUnit);
+        let newUnitClasses = newUnit.getAttribute("class").split(" ");
         //проверяем, что newUnit - это не часть змейки
-	    //также проверяем, что змейка не дошла до границы
+	    //также проверяем, что змейка не дошла до границы и 
         if (!isSnakeUnit(newUnit) && newUnit != undefined) {
+            if (!newUnitClasses.includes("obstacles-unit")) {
             //Добавляем новую часть змейки
             newUnit.setAttribute("class", newUnit.getAttribute("class") + " snake-unit");
             snake.push(newUnit);
@@ -123,9 +125,12 @@ function moveSnake() {
             } else {
                 numberOfFood[1]--;
             }
+        } 
         } else {
             finishTheGame();
-        }
+                
+            }
+            
     }
 }
 
@@ -138,8 +143,8 @@ function isSnakeUnit(unit){
 	
 	if(snake.includes(unit)){
 		check = true;
-	}
-	
+        
+	}	
 	return check;
 }
 
@@ -220,7 +225,8 @@ function changeSnakeDirection(e) {
 }
 
 function createobstacles() {
-    if (numberOfObstacles[1] < numberOfObstacles[0]) {
+//    if (numberOfObstacles[1] < numberOfObstacles[0]) {
+      if (gameIsRunning == true) {
         let obstaclesCreated = false;
         while (!obstaclesCreated) {
             //Выбираем случайную клетку
@@ -240,18 +246,13 @@ function createobstacles() {
                 
             }
         }
-        if (numberOfObstacles[1] == numberOfObstacles[0]) {
-            corddel = document.getElementsByClassName("obstacles-unit -" + corddelOfObstacles)[0];
-            let classes = corddel.getAttribute("class").split(" ");
-                //удаление маркирующего класса obstacles-unit
-                corddel.setAttribute("class", classes[0] + " " + classes[1]);
-            corddelOfObstacles++;
+        if (numberOfObstacles[1] > numberOfObstacles[0]) {
+            let removeObstacles = obstacles[0];    //Находим удаляемый элемент
+            let classes = removeObstacles.getAttribute("class").split(" ");
+            //удаление маркирующего класса obstacles-unit
+            removeObstacles.setAttribute("class", classes[0] + " " + classes[1]);
+            obstacles.shift(); // удаляем первый элемент в масивве препятствий
             numberOfObstacles[1]--;
-            console.log("numberOfObstacles[1]  " + numberOfObstacles[1] + "  corddelOfObstacles  " + corddelOfObstacles )
-            if (corddelOfObstacles == numberOfObstacles[0]) {
-                corddelOfObstacles = 0;
-            }
-            
         }
     } 
 }
