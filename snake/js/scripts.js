@@ -15,7 +15,6 @@ let numberOfFood = [3, 0];  //Количество еды. 0 элемент-ма
 let obstaclesTimer; // таймер препятствий
 let obstaclesspeed = 2000; // скорость появления препятствий
 let numberOfObstacles = [4, 0];// количество препятсвий. 0 элемент-макс количество, 1 элемент - количество на поле
-let corddelOfObstacles = 0; // порядковый номер удаления препятствия
 let obstacles = []; // сами препятствия
 
 let score = 0;  //Очки
